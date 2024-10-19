@@ -1,0 +1,16 @@
+<input [(ngModel)] = "searchTerm" type="text"  placeholder="Busque edições" id="filter_input"/>
+<mat-checkbox class="checkbox_acessibilidade" (change)="setAcessibility($event.checked)" [checked]="filterByAcessibility">Filtrar por acessibilidade</mat-checkbox> <img src="assets\images\icons\libras.png" class="icon_libras" alt="ícone acessibilidade">
+ 
+<div  *ngFor="let data of getfilteredValue()">
+    <mat-card>
+        <mat-card-title><a [routerLink]="['/print/view/'+data.codigo]" >{{data.titulo.toUpperCase()}} ({{data.publicacao[0].data}})</a></mat-card-title>
+        <mat-card-subtitle>{{data.autor}} - {{data.publicacao[0].circulacao}}</mat-card-subtitle>
+        <mat-card-content [innerHTML]="data.edicao[0].linhas[1].texto_critico"></mat-card-content>
+    </mat-card>
+</div>
+
+<mat-paginator [length]="length"
+              [pageSize]="pageSize"
+              [pageSizeOptions]="pageSizeOptions"
+              (page)="pageEvent = $event">
+</mat-paginator>

@@ -1,0 +1,178 @@
+  <div id="container">
+    <div  *ngIf="jsonFormData !== undefined" class="section">    
+      <div class="user_tools">
+        <div *ngIf="hasAudio()">
+          <ngx-audio-player [playlist]="msaapPlaylist" [displayTitle]="msaapDisplayTitle" [autoPlay]="false"
+                            muted="muted" [displayPlaylist]="msaapDisplayPlayList" [pageSizeOptions]="pageSizeOptions"
+                            [displayVolumeControls]="msaapDisplayVolumeControls" [displayRepeatControls]="msaapDisplayRepeatControls"
+                            [disablePositionSlider]="msaapDisablePositionSlider" [displayArtist]="msaapDisplayArtist"
+                            [displayDuration]="msaapDisplayDuration" [expanded]="false"></ngx-audio-player>
+        </div> 
+               
+     
+        <div class="tool_box">
+          <button type="button" *ngIf="!aparatoNotaVisivel" [ngClass]="{'primary' : facsimileVisivel}" (click)="toogleFacsimile()">Fac-símile</button>
+          <button *ngIf="hasAparatoNota(jsonFormData.publicacao[0].codigo) && !facsimileVisivel" type="button" [ngClass]="{'primary' : aparatoNotaVisivel}" (click)="toogleAparatoNota()">Aparato de nota</button>
+          <button *ngIf="!bigFont" type="button" (click)="setBigFont(true)">A+</button>
+          <button *ngIf="bigFont" type="button" (click)="setBigFont(false)">A-</button>          
+          <input *ngIf="jsonFormData.edicao[0].video_libras != null" type="image" src="assets\images\icons\libras_1.png" [ngClass]="{'primary' : videoVisivel}" (click)="toogleVideo(jsonFormData.edicao[0].video_libras)" title="Tradução em Libras"/> 
+          <input *ngIf="jsonFormData.edicao[0].video_libras_aparato != null" type="image" src="assets\images\icons\libras_2.png" [ngClass]="{'primary' : videoVisivel}" (click)="toogleVideo(jsonFormData.edicao[0].video_libras_aparato)" title="Tradução em Libras"/> 
+          <input type="image" style="float: right;" src="assets\images\icons\print_icon.png" (click)="goToPrintPage();" title="Página de impressão"/>
+        </div>   
+      </div>
+
+      <mat-tab-group>
+      <mat-tab *ngFor="let publicacao of jsonFormData.publicacao; last as isLast" label="{{publicacao.titulo + ((jsonFormData.publicacao.length > 1 && isLast) ? ' - Texto de base' : '')+' '+publicacao.data}}" (click)="toogleFacsimile()" >         
+        <div [ngClass]="{'pageitem': true, 'bigFont': bigFont, 'smallFont': !bigFont}"> 
+          <div *ngIf="facsimileVisivel" class="col, facsimile">
+            <img src="{{getPathForFacsimile(publicacao.codigo)}}" alt="Facsímile do poema {{jsonFormData.titulo}}. {{publicacao.audio_descricao}}" class="facsimile-image" />
+          </div>          
+
+          <div *ngIf="aparatoNotaVisivel" class="col, aparato-nota">
+            <!-- Aparato nota -->
+            <div *ngFor="let linha of jsonFormData.edicao[0].linhas; index as i;">   
+              <div *ngFor="let textoComAparato of getTextoComAparato(linha, publicacao.codigo); index as i;">
+                <p *ngIf="(textoComAparato.aparato !== undefined && textoComAparato.aparato.tipo === 'nota_referencia' && textoComAparato.aparato.referencia !== undefined);"><a class="link-aparato" href="/document/{{textoComAparato.aparato.referencia.codigo}}">{{textoComAparato.aparato.conteudo}}</a></p>                             
+                <p *ngIf="(textoComAparato.aparato !== undefined && textoComAparato.aparato.tipo === 'nota_referencia' && textoComAparato.aparato.referencia == undefined);">{{textoComAparato.aparato.conteudo}}</p>                             
+                <p *ngIf="(textoComAparato.aparato !== undefined && textoComAparato.aparato.tipo === 'nota_referencia_poema' && textoComAparato.aparato.referencia !== undefined);"><a class="link-aparato" href="/poema/{{textoComAparato.aparato.referencia.codigo}}">{{textoComAparato.aparato.conteudo}}</a></p>                             
+                <p *ngIf="(textoComAparato.aparato !== undefined && textoComAparato.aparato.tipo === 'nota_referencia_poema'  && textoComAparato.aparato.referencia == undefined);">{{textoComAparato.aparato.conteudo}}</p>                             
+            
+                <p *ngIf="(textoComAparato.aparato !== undefined && textoComAparato.aparato.tipo === 'nota_referencia_link');"><a class="link-aparato" href="{{textoComAparato.aparato.referencia.link}}">{{textoComAparato.aparato.conteudo}}</a></p>       
+                <p *ngIf="(textoComAparato.aparato !== undefined && textoComAparato.aparato.tipo === 'nota_referencia_imagem');">
+                          {{textoComAparato.aparato.conteudo}} Confira o fac-símile abaixo:                          
+                          <img class="image-nota" src="/assets/images/{{textoComAparato.aparato.referencia.link}}">
+                          <a href="/assets/images/{{textoComAparato.aparato.referencia.link}}">Clique aqui para ver maior</a>
+                </p>                         
+              </div>  
+              <br>           
+            </div>
+        </div>
+          <div class="col">    
+            <div [ngClass]="{'limites_poema': true, 'limites_poema_sem_facsimile': !facsimileVisivel && !aparatoNotaVisivel}"> 
+              <div class="col, area_poema">
+                <!-- Título -->
+                <div *ngFor="let linha of jsonFormData.edicao[0].linhas; index as i;">              
+                  <div class="textoCriticoHover" *ngIf="linha.tipo === 'cabecalho';">
+                    <div [innerHTML]="'<b>'+getTextoCritico(linha, publicacao.codigo)+'</b>'">
+                    </div>
+                    <div class='aparatoHover'>
+                      <div *ngFor="let textoComAparato of getTextoComAparato(linha, publicacao.codigo); index as i;">
+                        <p *ngIf="textoComAparato.aparato !== undefined && ( ['atualizacao_ortografica', 'acentuacao', 'concordancia', 'pontuacao', 'desenvolvimento_abreviatura', 'leitura_conjecturada', 'dano_suporte', 'desenvolvimento_abreviatura', 'desenvolvimento_data', 'outros'].indexOf(textoComAparato.aparato.tipo) > -1)">{{textoComAparato.aparato.conteudo +" -> "+textoComAparato.conteudo}}</p>
+                      </div>
+                     <!-- <div *ngFor="let textoComAparato of getTextoComAparato(linha, publicacao.codigo); index as i;">
+                        <p *ngIf="textoComAparato.aparato !== undefined && textoComAparato.aparato.tipo === 'nota_referencia'"><a class="link-aparato" href="{{textoComAparato.aparato.referencia.codigo}}">{{textoComAparato.aparato.conteudo}}</a></p>            
+                      </div>-->
+                    </div>
+                  </div>
+                </div>
+                <!-- Título -->
+                <div *ngFor="let linha of jsonFormData.edicao[0].linhas; index as i;">              
+                  <div class="textoCriticoHover" *ngIf="linha.tipo === 'titulo';">
+                    <div class="title titulo_centralizado"  [innerHTML]="'<b>'+getTextoCritico(linha, publicacao.codigo)+'</b>'">
+                    </div>
+                    <div class='aparatoHover'>
+                      <div *ngFor="let textoComAparato of getTextoComAparato(linha, publicacao.codigo); index as i;">
+                        <p *ngIf="textoComAparato.aparato !== undefined && ( ['atualizacao_ortografica', 'acentuacao', 'concordancia', 'pontuacao', 'desenvolvimento_abreviatura', 'leitura_conjecturada', 'dano_suporte', 'desenvolvimento_abreviatura', 'desenvolvimento_data', 'outros'].indexOf(textoComAparato.aparato.tipo) > -1)">{{textoComAparato.aparato.conteudo +" -> "+textoComAparato.conteudo}}</p>
+                      </div>
+                     <!-- <div *ngFor="let textoComAparato of getTextoComAparato(linha, publicacao.codigo); index as i;">
+                        <p *ngIf="textoComAparato.aparato !== undefined && textoComAparato.aparato.tipo === 'nota_referencia'"><a class="link-aparato" href="{{textoComAparato.aparato.referencia.codigo}}">{{textoComAparato.aparato.conteudo}}</a></p>            
+                      </div>-->
+                    </div>
+                  </div>
+                </div>
+                <!-- Dedicatória -->
+                <div *ngFor="let linha of jsonFormData.edicao[0].linhas; index as i;">              
+                      <div *ngIf="linha.tipo === 'dedicatoria';" [ngClass]="{'dedicatoria_centralizado textoCriticoHover' : true, 'dedicatoria_com_facsimile' : facsimileVisivel || aparatoNotaVisivel}">
+                        <div [innerHTML]="getTextoCritico(linha, publicacao.codigo)">
+                        </div>
+                        <div class='aparatoHover'>
+                          <div *ngFor="let textoComAparato of getTextoComAparato(linha, publicacao.codigo); index as i;">
+                            <p *ngIf="textoComAparato.aparato !== undefined && ( ['atualizacao_ortografica', 'acentuacao', 'concordancia', 'pontuacao', 'desenvolvimento_abreviatura', 'leitura_conjecturada', 'dano_suporte', 'desenvolvimento_abreviatura', 'desenvolvimento_data', 'outros'].indexOf(textoComAparato.aparato.tipo) > -1)">{{textoComAparato.aparato.conteudo +" -> "+textoComAparato.conteudo}}</p>
+                          </div>
+                          <!--<div *ngFor="let textoComAparato of getTextoComAparato(linha, publicacao.codigo); index as i;">
+                            <p *ngIf="textoComAparato.aparato !== undefined && textoComAparato.aparato.tipo === 'nota_referencia'"><a class="link-aparato" href="/document/{{textoComAparato.aparato.referencia.codigo}}">{{textoComAparato.aparato.conteudo}}</a></p>            
+                          </div>-->
+                        </div>
+                  </div>
+                </div>
+                <!-- Versos -->
+                {{resetLineCount()}}
+                <div *ngFor="let linha of jsonFormData.edicao[0].linhas; index as i;">
+                  <div class="pageitem" *ngIf="linha.tipo === 'verso';">
+                    <div class="col">
+                      <div class="textoCriticoHover texto_critico">
+                        <div class="enumeracao">
+                          {{incrementLineCount(jsonFormData.edicao[0].criterios.enumeracao_por_linha)}}
+                        </div>
+                        <div class="texto_critico_conteudo" [innerHTML]="getTextoCritico(linha, publicacao.codigo)">                      
+                        </div>
+                        <div class='aparatoHover'>
+                          <div *ngFor="let textoComAparato of getTextoComAparato(linha, publicacao.codigo); index as i;">
+                            <p *ngIf="textoComAparato.aparato !== undefined && ( ['atualizacao_ortografica', 'acentuacao', 'concordancia', 'pontuacao', 'desenvolvimento_abreviatura', 'leitura_conjecturada', 'dano_suporte', 'desenvolvimento_abreviatura', 'desenvolvimento_data', 'outros'].indexOf(textoComAparato.aparato.tipo) > -1)">{{textoComAparato.aparato.conteudo +" -> "+textoComAparato.conteudo}}</p>
+                          </div>
+                          <!--<div *ngFor="let textoComAparato of getTextoComAparato(linha, publicacao.codigo); index as i;">
+                            <p *ngIf="textoComAparato.aparato !== undefined && textoComAparato.aparato.tipo === 'nota_referencia'"><a class="link-aparato" href="/document/{{textoComAparato.aparato.referencia.codigo}}">{{textoComAparato.aparato.conteudo}}</a></p>            
+                          </div>-->
+                        </div>
+
+                      </div>
+                    </div>
+                  </div>
+                  <div class="pageitem" *ngIf="linha.tipo === 'quebra_de_linha';">
+                    <br>
+                  </div>
+                </div>
+                <br>
+                <!-- Data/Local/Nome -->
+                <div *ngFor="let linha of jsonFormData.edicao[0].linhas; index as i;">
+                  <div class="pageitem" *ngIf="linha.tipo === 'data' || linha.tipo === 'local' || linha.tipo === 'nome_publicado' || linha.tipo === 'codigo';">
+                    <div class="col">
+                      <div class="textoCriticoHover texto_critico">
+                        <div class="texto_critico_conteudo" [innerHTML]="getTextoCritico(linha, publicacao.codigo)">
+                        </div>
+                        <div class='aparatoHover aparatoHoverEnd'>
+                          <div *ngFor="let textoComAparato of getTextoComAparato(linha, publicacao.codigo); index as i;">
+                            <p *ngIf="textoComAparato.aparato !== undefined && ( ['atualizacao_ortografica', 'acentuacao', 'concordancia', 'pontuacao', 'desenvolvimento_abreviatura', 'leitura_conjecturada', 'dano_suporte', 'desenvolvimento_abreviatura', 'desenvolvimento_data', 'outros'].indexOf(textoComAparato.aparato.tipo) > -1)">{{textoComAparato.aparato.conteudo +" -> "+textoComAparato.conteudo}}</p>
+                          </div>
+                          <!--<div *ngFor="let textoComAparato of getTextoComAparato(linha, publicacao.codigo); index as i;">
+                            <p *ngIf="textoComAparato.aparato !== undefined && textoComAparato.aparato.tipo === 'nota_referencia'"><a class="link-aparato" href="/document/{{textoComAparato.aparato.referencia.codigo}}">{{textoComAparato.aparato.conteudo}}</a></p>            
+                          </div>-->
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div> 
+
+        </div>
+      </mat-tab> 
+      </mat-tab-group>
+         
+      <div *ngIf="videoVisivel" class="col">      
+        <iframe width="560" height="315" [src]='getSelectedVideo() | safe' frameborder="0" class="video" allowfullscreen>Erro carregando vídeo</iframe>
+      </div>
+
+      <mat-expansion-panel (opened)="panelOpenState = true"
+                           (closed)="panelOpenState = false">
+        <mat-expansion-panel-header>
+          <mat-panel-title>
+            Informações sobre o Testemunho
+          </mat-panel-title>
+          <mat-panel-description>
+            {{panelOpenState ? '' : 'Toque para expandir'}}
+          </mat-panel-description>
+        </mat-expansion-panel-header>
+      
+        <p>Título: {{jsonFormData.publicacao[0].titulo}}</p>
+        <p>Autor(a): {{jsonFormData.publicacao[0].nome_autor}}</p>
+        <p>Data: {{jsonFormData.publicacao[0].data}}</p>
+        <p>Local: {{jsonFormData.publicacao[0].local}}</p>
+        <p>Circulação: {{jsonFormData.publicacao[0].circulacao}}</p>
+        <p>Suporte: {{jsonFormData.publicacao[0].suporte}}</p>
+        <p>Instituição de custódia: {{jsonFormData.publicacao[0].encontrado_em.local}}</p>
+      
+      </mat-expansion-panel>
+    </div>
+</div>

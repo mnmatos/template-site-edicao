@@ -1,0 +1,30 @@
+<div #theContainer>
+<div class="dossier-block">
+    <h1>Dossiê</h1>
+    <h2>{{getGrouDesc()}}</h2>
+    <div *ngIf="type=='producao'">
+        <p>Este é um exemplo de página de Acervo</p>
+    </div>
+</div>    
+<mat-grid-list cols="{{columnNum}}" rowHeight="1:1">
+    <div  *ngFor="let entry of entries">
+        <mat-grid-tile *ngIf="docMap.has(entry.codigo)">
+            <mat-card class="picture-card" routerLink = "/document/{{entry.codigo}}">
+                <mat-card-header>
+                <mat-card-title>{{docMap.get(entry.codigo).titulo}}</mat-card-title>
+                </mat-card-header>
+                    <img *ngIf="isImage(entry.codigo); else elseBlock" mat-card-image src="{{group == grupProducao ? getPathDocImage() : getPathForFileByCode(entry.codigo)}}" alt="{{docMap.get(entry.codigo).titulo}}">
+                    <ng-template #elseBlock>
+                        <img mat-card-image class="mat-card-doc-icon" src="{{getPathDocImage()}}" alt="{{docMap.get(entry.codigo).titulo}}">                       
+                    </ng-template>
+                <mat-card-content>
+                <p>
+                    Encontrado em {{docMap.get(entry.codigo).encontrado_em}}
+                </p>
+                </mat-card-content>
+            </mat-card>
+        </mat-grid-tile>
+    </div>
+</mat-grid-list>
+</div>
+

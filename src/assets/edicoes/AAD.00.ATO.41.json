@@ -1,0 +1,489 @@
+{
+   "tipo": "poema",
+   "publicacao": [
+      {
+         "codigo": "AAD.01a.ATO.41.I.IGHB",
+         "data": "08/03/1941",
+         "local": "Itaberaba",
+         "circulacao": "Jornal O Itaberaba",
+         "suporte": "Papel",
+         "titulo": "\"Aos teus olhos\"",
+         "nome_autor": "Alcina Dantas",
+         "encontrado_em": {
+            "local": "Instituto Geográfico e Histórico da Bahia"
+         },
+         "texto": []
+      },
+      {
+         "codigo": "AAD.01a.ATO.41.FN.MCS",
+         "data": "22/03/1941",
+         "local": "Feira de Santana",
+         "circulacao": "Jornal Folha do Norte",
+         "suporte": "Papel",
+         "titulo": "\"Aos teus olhos\"",
+         "nome_autor": "Alcina Dantas",
+         "encontrado_em": {
+            "local": "Museu Casa do Sertão"
+         },
+         "texto": []
+      }
+   ],
+   "edicao": [
+      {
+         "criterios": {
+            "enumeracao_por_linha": 5,
+            "orientacao_titulo": "centralizado",
+            "orientacao_local_data": "direita",
+            "texto_criterios": []
+         },
+         "linhas": [
+            {
+               "tipo": "titulo",
+               "texto_critico": "\"AOS TEUS OLHOS\"",
+               "aparato": [
+                  {
+                     "tipo": "nota_referencia",
+                     "posicao": "1-3",
+                     "conteudo": "Sobre o tema do olhar, conferir outro texto de Alcina Dantas: \"Olhos benditos\"",
+                     "codigo": "AAD.01a.ATO.41.FN.MCS",
+                     "referencia": {
+                        "codigo": "AAD.01c.OB.29.FN.MCS"
+                     }
+                  },
+                  {
+                     "tipo": "nota_referencia",
+                     "posicao": "1-3",
+                     "conteudo": "Sobre o tema do olhar, conferir outro texto de Alcina Dantas: \"Olhos benditos\"",
+                     "codigo": "AAD.01a.ATO.41.I.IGHB",
+                     "referencia": {
+                        "codigo": "AAD.01c.OB.29.FN.MCS"
+                     }
+                  }
+               ]
+            },
+            {
+               "tipo": "dedicatoria",
+               "texto_critico": "<i> \"Admirar... o belo!...\" </i>",
+               "aparato": [
+                  {
+                     "tipo": "outros",
+                     "posicao": "2-4",
+                     "conteudo": "I .... – .........?",
+                     "codigo": "AAD.01a.ATO.41.I.IGHB"
+                  },
+                  {
+                     "tipo": "pontuacao",
+                     "posicao": "3-4",
+                     "conteudo": "o belo!... (s.p)",
+                     "codigo": "AAD.01a.ATO.41.FN.MCS"
+                  }
+               ]
+            },
+            {
+               "tipo": "verso",
+               "texto_critico": "Olhos de luz, de lúcida beleza...",
+               "aparato": [
+                  {
+                     "tipo": "atualizacao_ortografica",
+                     "posicao": "5",
+                     "conteudo": "I, FN lucida (s.a)",
+                     "codigo": "AAD.01a.ATO.41.FN.MCS"
+                  },
+                  {
+                     "tipo": "atualizacao_ortografica",
+                     "posicao": "6",
+                     "conteudo": "I, FN belleza...",
+                     "codigo": "AAD.01a.ATO.41.I.IGHB"
+                  },
+                  {
+                     "tipo": "atualizacao_ortografica",
+                     "posicao": "6",
+                     "conteudo": "I, FN belleza...",
+                     "codigo": "AAD.01a.ATO.41.FN.MCS"
+                  }
+               ]
+            },
+            {
+               "tipo": "verso",
+               "texto_critico": "Olhos de amor, de crença e de esperança...",
+               "aparato": []
+            },
+            {
+               "tipo": "verso",
+               "texto_critico": "Olhos que nos despertam a lembrança",
+               "aparato": [
+                  {
+                     "tipo": "outros",
+                     "posicao": "4",
+                     "conteudo": "I empre[s]tam (gralha tipográfica)  FN despertam",
+                     "codigo": "AAD.01a.ATO.41.I.IGHB"
+                  },
+                  {
+                     "tipo": "outros",
+                     "posicao": "4",
+                     "conteudo": "I empre[s]tam (gralha tipográfica) FN despertam",
+                     "codigo": "AAD.01a.ATO.41.FN.MCS"
+                  }
+               ]
+            },
+            {
+               "tipo": "verso",
+               "texto_critico": "Do encantamento célico em Veneza.",
+               "aparato": []
+            },
+            {
+               "tipo": "quebra_de_linha",
+               "aparato": []
+            },
+            {
+               "tipo": "verso",
+               "texto_critico": "Olhar sublime e calmo que seduz,",
+               "aparato": []
+            },
+            {
+               "tipo": "verso",
+               "texto_critico": "Assim, jorrando borbotões de luz. ",
+               "aparato": [
+                  {
+                     "tipo": "pontuacao",
+                     "posicao": "5",
+                     "conteudo": "I –",
+                     "codigo": "AAD.01a.ATO.41.I.IGHB"
+                  }
+               ]
+            },
+            {
+               "tipo": "quebra_de_linha",
+               "aparato": []
+            },
+            {
+               "tipo": "verso",
+               "texto_critico": "Clarão divino iluminando tudo!",
+               "aparato": [
+                  {
+                     "tipo": "atualizacao_ortografica",
+                     "posicao": "3",
+                     "conteudo": "I iluminando FN illuminando",
+                     "codigo": "AAD.01a.ATO.41.FN.MCS"
+                  }
+               ]
+            },
+            {
+               "tipo": "verso",
+               "texto_critico": "Olhar que fala e, sem falar, traduz",
+               "aparato": [
+                  {
+                     "tipo": "atualizacao_ortografica",
+                     "posicao": "6",
+                     "conteudo": "I falar FN fallar",
+                     "codigo": "AAD.01a.ATO.41.FN.MCS"
+                  }
+               ]
+            },
+            {
+               "tipo": "verso",
+               "texto_critico": "A agonia de Jesus, gemido mudo,",
+               "aparato": [
+                  {
+                     "tipo": "outros",
+                     "posicao": "5-6",
+                     "conteudo": "I seu grito mudo  FN gemido mudo",
+                     "codigo": "AAD.01a.ATO.41.I.IGHB"
+                  },
+                  {
+                     "tipo": "outros",
+                     "posicao": "5-6",
+                     "conteudo": "I seu grito mudo,  FN gemido mudo,",
+                     "codigo": "AAD.01a.ATO.41.FN.MCS"
+                  }
+               ]
+            },
+            {
+               "tipo": "verso",
+               "texto_critico": "Sua lágrima final, morrendo à cruz.",
+               "aparato": [
+                  {
+                     "tipo": "atualizacao_ortografica",
+                     "posicao": "2",
+                     "conteudo": "I, FN lagrima",
+                     "codigo": "AAD.01a.ATO.41.I.IGHB"
+                  },
+                  {
+                     "tipo": "acentuacao",
+                     "posicao": "5",
+                     "conteudo": "I, FN á",
+                     "codigo": "AAD.01a.ATO.41.I.IGHB"
+                  },
+                  {
+                     "tipo": "acentuacao",
+                     "posicao": "2",
+                     "conteudo": "I, FN  lagrima (s.a)",
+                     "codigo": "AAD.01a.ATO.41.FN.MCS"
+                  },
+                  {
+                     "tipo": "acentuacao",
+                     "posicao": "5",
+                     "conteudo": "I, FN á",
+                     "codigo": "AAD.01a.ATO.41.FN.MCS"
+                  }
+               ]
+            },
+            {
+               "tipo": "quebra_de_linha",
+               "aparato": []
+            },
+            {
+               "tipo": "verso",
+               "texto_critico": "Estrelas fulgurantes n'amplidão.",
+               "aparato": [
+                  {
+                     "tipo": "atualizacao_ortografica",
+                     "posicao": "1",
+                     "conteudo": "I, FN Estrellas",
+                     "codigo": "AAD.01a.ATO.41.I.IGHB"
+                  },
+                  {
+                     "tipo": "pontuacao",
+                     "posicao": "3",
+                     "conteudo": "I –"
+                  },
+                  {
+                     "tipo": "nota_referencia",
+                     "posicao": "3",
+                     "conteudo": "Registra-se aqui o recurso utilizado (travessão para marcar o alinhamento da mancha escrita) na publicação do texto nos jornais para alinhamento da margem.",
+                     "codigo": "AAD.01a.ATO.41.I.IGHB"
+                  },
+                  {
+                     "tipo": "atualizacao_ortografica",
+                     "posicao": "1",
+                     "conteudo": "I, FN Estrellas",
+                     "codigo": "AAD.01a.ATO.41.FN.MCS"
+                  },
+                  {
+                     "tipo": "outros",
+                     "posicao": "3",
+                     "conteudo": "I n'amplidão  FN namplidão",
+                     "codigo": "AAD.01a.ATO.41.FN.MCS"
+                  },
+                  {
+                     "tipo": "outros",
+                     "posicao": "3",
+                     "conteudo": "I n'amplidão  FN namplidão",
+                     "codigo": "AAD.01a.ATO.41.I.IGHB"
+                  },
+                  {
+                     "tipo": "pontuacao",
+                     "posicao": "3",
+                     "conteudo": "FN –",
+                     "codigo": "AAD.01a.ATO.41.FN.MCS"
+                  },
+                  {
+                     "tipo": "nota_referencia",
+                     "posicao": "3",
+                     "conteudo": "Registra-se aqui o recurso utilizado (travessão para marcar o alinhamento da mancha escrita) na publicação do texto nos jornais para alinhamento da margem.",
+                     "codigo": "AAD.01a.ATO.41.FN.MCS"
+                  }
+               ]
+            },
+            {
+               "tipo": "verso",
+               "texto_critico": "Centelhas diamantinas... doce luz,",
+               "aparato": [
+                  {
+                     "tipo": "pontuacao",
+                     "posicao": "3",
+                     "conteudo": "I dôce  FN doce (s.a)",
+                     "codigo": "AAD.01a.ATO.41.FN.MCS"
+                  }
+               ]
+            },
+            {
+               "tipo": "verso",
+               "texto_critico": "Desse sol tropical que nos seduz",
+               "aparato": [
+                  {
+                     "tipo": "outros",
+                     "posicao": "2",
+                     "conteudo": "I, FN sól",
+                     "codigo": "AAD.01a.ATO.41.I.IGHB"
+                  },
+                  {
+                     "tipo": "acentuacao",
+                     "posicao": "2",
+                     "conteudo": "I, FN  sól",
+                     "codigo": "AAD.01a.ATO.41.FN.MCS"
+                  }
+               ]
+            },
+            {
+               "tipo": "verso",
+               "texto_critico": "Para idílios febris, lá no sertão.",
+               "aparato": [
+                  {
+                     "tipo": "atualizacao_ortografica",
+                     "posicao": "2",
+                     "conteudo": "I, FN idylios",
+                     "codigo": "AAD.01a.ATO.41.I.IGHB"
+                  },
+                  {
+                     "tipo": "pontuacao",
+                     "posicao": "3",
+                     "conteudo": "I febris (s.v)",
+                     "codigo": "AAD.01a.ATO.41.I.IGHB"
+                  },
+                  {
+                     "tipo": "pontuacao",
+                     "posicao": "3",
+                     "conteudo": "I febris (s.v)",
+                     "codigo": "AAD.01a.ATO.41.FN.MCS"
+                  },
+                  {
+                     "tipo": "atualizacao_ortografica",
+                     "posicao": "2",
+                     "conteudo": "I, FN idylios",
+                     "codigo": "AAD.01a.ATO.41.FN.MCS"
+                  }
+               ]
+            },
+            {
+               "tipo": "quebra_de_linha",
+               "aparato": []
+            },
+            {
+               "tipo": "verso",
+               "texto_critico": "Teus olhos, oh! fanal de muitas vidas!",
+               "aparato": []
+            },
+            {
+               "tipo": "verso",
+               "texto_critico": "São silêncio, mistério, aroma e flor,",
+               "aparato": [
+                  {
+                     "tipo": "atualizacao_ortografica",
+                     "posicao": "6",
+                     "conteudo": "I, FN flôr,",
+                     "codigo": "AAD.01a.ATO.41.I.IGHB"
+                  },
+                  {
+                     "tipo": "pontuacao",
+                     "posicao": "2",
+                     "conteudo": "I, FN silencio (s.a)",
+                     "codigo": "AAD.01a.ATO.41.I.IGHB"
+                  },
+                  {
+                     "tipo": "atualizacao_ortografica",
+                     "posicao": "3",
+                     "conteudo": "I, FN mysterio,",
+                     "codigo": "AAD.01a.ATO.41.I.IGHB"
+                  },
+                  {
+                     "tipo": "atualizacao_ortografica",
+                     "posicao": "6",
+                     "conteudo": "I, FN flôr,",
+                     "codigo": "AAD.01a.ATO.41.FN.MCS"
+                  },
+                  {
+                     "tipo": "acentuacao",
+                     "posicao": "2",
+                     "conteudo": "I, FN silencio (s.a) (s.v)",
+                     "codigo": "AAD.01a.ATO.41.FN.MCS"
+                  },
+                  {
+                     "tipo": "atualizacao_ortografica",
+                     "posicao": "3",
+                     "conteudo": "I, FN mysterio",
+                     "codigo": "AAD.01a.ATO.41.FN.MCS"
+                  }
+               ]
+            },
+            {
+               "tipo": "verso",
+               "texto_critico": "São harmonias de glórias repetidas,",
+               "aparato": [
+                  {
+                     "tipo": "acentuacao",
+                     "posicao": "4",
+                     "conteudo": "glorias",
+                     "codigo": "AAD.01a.ATO.41.I.IGHB"
+                  },
+                  {
+                     "tipo": "pontuacao",
+                     "posicao": "5",
+                     "conteudo": "I repetidas (s.v)",
+                     "codigo": "AAD.01a.ATO.41.I.IGHB"
+                  },
+                  {
+                     "tipo": "atualizacao_ortografica",
+                     "posicao": "4",
+                     "conteudo": "I, FN glorias (s.a)",
+                     "codigo": "AAD.01a.ATO.41.FN.MCS"
+                  }
+               ]
+            },
+            {
+               "tipo": "verso",
+               "texto_critico": "Porque, sem falar, só dizem amor.",
+               "aparato": [
+                  {
+                     "tipo": "atualizacao_ortografica",
+                     "posicao": "6",
+                     "conteudo": "I, FN amôr.",
+                     "codigo": "AAD.01a.ATO.41.I.IGHB"
+                  },
+                  {
+                     "tipo": "atualizacao_ortografica",
+                     "posicao": "6",
+                     "conteudo": "I, FN amôr.",
+                     "codigo": "AAD.01a.ATO.41.FN.MCS"
+                  }
+               ]
+            },
+            {
+               "tipo": "nome_publicado",
+               "texto_critico": "ALCINA DANTAS.",
+               "aparato": [
+                  {
+                     "tipo": "pontuacao",
+                     "posicao": "1-2",
+                     "conteudo": "FN ALCINA DANTAS (s.p)",
+                     "codigo": "AAD.01a.ATO.41.I.IGHB"
+                  },
+                  {
+                     "tipo": "pontuacao",
+                     "posicao": "1-2",
+                     "conteudo": "FN ALCINA DANTAS (s.p)",
+                     "codigo": "AAD.01a.ATO.41.FN.MCS"
+                  }
+               ]
+            },
+            {
+               "tipo": "local",
+               "texto_critico": "Feira de S[an]tana, 1941.",
+               "aparato": [
+                  {
+                     "tipo": "desenvolvimento_data",
+                     "posicao": "3-4",
+                     "conteudo": "4-3-1941 (s.p)",
+                     "codigo": "AAD.01a.ATO.41.I.IGHB"
+                  },
+                  {
+                     "tipo": "desenvolvimento_data",
+                     "posicao": "3",
+                     "conteudo": "FN Feira de Sta.Anna (s.v)",
+                     "codigo": "AAD.01a.ATO.41.FN.MCS"
+                  },
+                  {
+                     "tipo": "pontuacao",
+                     "posicao": "3",
+                     "conteudo": "FN Feira de Sta.Anna (s.p)",
+                     "codigo": "AAD.01a.ATO.I.IGHB.MCS"
+                  }
+               ]
+            }
+         ]
+      }
+   ],
+   "titulo": "\"AOS TEUS OLHOS\"",
+   "autor": "Alcina Dantas",
+   "codigo": "AAD.00.ATO.41"
+}

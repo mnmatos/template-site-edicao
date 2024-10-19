@@ -1,0 +1,15 @@
+
+
+<mat-label>Descrição</mat-label>
+<textarea 
+            type="string"
+            floating-label
+            [name]="name"
+            [attr.id]="id"
+            [formControl]="control"
+            matInput
+            cdkTextareaAutosize
+            #autosize="cdkTextareaAutosize"
+            cdkAutosizeMinRows="1"
+            cdkAutosizeMaxRows="5"></textarea>
+

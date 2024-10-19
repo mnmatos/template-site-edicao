@@ -1,0 +1,266 @@
+{
+   "tipo": "poema",
+   "publicacao": [
+      {
+         "codigo": "AAD.01a.PG.57.FN.MCS",
+         "data": "11/05/1957",
+         "local": "Feira de Santana",
+         "circulacao": "Jornal",
+         "suporte": "Papel",
+         "titulo": "\"Princesinha da Graça\"",
+         "encontrado_em": {
+            "local": "Museu Casa do Sertão"
+         },
+         "nome_autor": "Alcina Dantas",
+         "texto": [
+            "\"Princesinha da Graça\""
+         ]
+      }
+   ],
+   "edicao": [
+      {
+         "criterios": {
+            "enumeracao_por_linha": 5,
+            "orientacao_titulo": "centralizado",
+            "orientacao_local_data": "direita",
+            "texto_criterios": [
+               "atualizaram-se a ortografia e a acentuação, conforme as normas vigentes",
+               "manteve-se a pontuação de acordo com o que se apresenta no testemunho, fazendo intervenção apenas onde se julgou necessário, apresentando-a entre colchetes em itálico [ ], registrando-se no aparato [s.p.] para sem ponto",
+               "utilizou-se o título centralizado, em maiúscula e com aspas",
+               "utilizou-se o itálico no texto crítico e o símbolo /*/ no aparato para leitura conjecturada",
+               "manteve-se a datação ao final do poema, por situar a produção da escritora"
+            ]
+         },
+         "linhas": [
+            {
+               "tipo": "titulo",
+               "texto_critico": "“PRINCESINHA DA GRAÇA”",
+               "aparato": []
+            },
+            {
+               "tipo": "dedicatoria",
+               "texto_critico": "<i> Homenagem à Graciosa Marquize Jales; ",
+               "aparato": [
+                  {
+                     "tipo": "pontuacao",
+                     "posicao": "1",
+                     "conteudo": "Homenagem,  ",
+                     "codigo": "AAD.01a.PG.57.FN.MCS"
+                  },
+                  {
+                     "tipo": "acentuacao",
+                     "posicao": "2",
+                     "conteudo": "a",
+                     "codigo": "AAD.01a.PG.57.FN.MCS"
+                  },
+                  {
+                     "tipo": "nota_referencia",
+                     "posicao": "5",
+                     "conteudo": "Marquize Jales foi aluna de Alcina Dantas no programa Brasil de amanhã (Instituto, 2015).",
+                     "codigo": "AAD.01a.PG.57.FN.MCS"
+                  }
+               ]
+            },
+            {
+               "tipo": "dedicatoria",
+               "texto_critico": "<i> Alcina Dantas, com muita admiração. </i>",
+               "aparato": []
+            },
+            {
+               "tipo": "quebra_de_linha",
+               "aparato": []
+            },
+            {
+               "tipo": "verso",
+               "texto_critico": "Quiseram ontem, hoje e amanhã ainda,",
+               "aparato": [
+                  {
+                     "tipo": "atualizacao_ortografica",
+                     "posicao": "1",
+                     "conteudo": "Quizeram",
+                     "codigo": "AAD.01a.PG.57.FN.MCS"
+                  }
+               ]
+            },
+            {
+               "tipo": "verso",
+               "texto_critico": "Que fosses Princesa da graça, e simpatia;",
+               "aparato": []
+            },
+            {
+               "tipo": "verso",
+               "texto_critico": "Te fizeram brilhar, como fios de luz,",
+               "aparato": [
+                  {
+                     "tipo": "atualizacao_ortografica",
+                     "posicao": "7",
+                     "conteudo": "lúz",
+                     "codigo": "AAD.01a.PG.57.FN.MCS"
+                  }
+               ]
+            },
+            {
+               "tipo": "verso",
+               "texto_critico": "De luz refulgente, de irradiação infinda!",
+               "aparato": [
+                  {
+                     "tipo": "atualizacao_ortografica",
+                     "posicao": "2",
+                     "conteudo": "lúz",
+                     "codigo": "AAD.01a.PG.57.FN.MCS"
+                  }
+               ]
+            },
+            {
+               "tipo": "quebra_de_linha",
+               "aparato": []
+            },
+            {
+               "tipo": "verso",
+               "texto_critico": "Tinhas no sorrir, sonoridade de cristal!",
+               "aparato": []
+            },
+            {
+               "tipo": "verso",
+               "texto_critico": "Tudo em ti, música e poesia do belo!",
+               "aparato": [
+                  {
+                     "tipo": "atualizacao_ortografica",
+                     "posicao": "3",
+                     "conteudo": "tí ",
+                     "codigo": "AAD.01a.PG.57.FN.MCS"
+                  },
+                  {
+                     "tipo": "acentuacao",
+                     "posicao": "4",
+                     "conteudo": "musica  (s.a)",
+                     "codigo": "AAD.01a.PG.57.FN.MCS"
+                  }
+               ]
+            },
+            {
+               "tipo": "verso",
+               "texto_critico": "E na graça, encanto de luar!",
+               "aparato": []
+            },
+            {
+               "tipo": "verso",
+               "texto_critico": "E a pureza da beleza floral!",
+               "aparato": []
+            },
+            {
+               "tipo": "quebra_de_linha",
+               "aparato": []
+            },
+            {
+               "tipo": "verso",
+               "texto_critico": "O mar, deu-te fios de pérolas, a enfeitar-te os beijos",
+               "aparato": [
+                  {
+                     "tipo": "acentuacao",
+                     "posicao": "7",
+                     "conteudo": "á ",
+                     "codigo": "AAD.01a.PG.57.FN.MCS"
+                  },
+                  {
+                     "tipo": "acentuacao",
+                     "posicao": "6",
+                     "conteudo": "perolas (s.a)    ",
+                     "codigo": "AAD.01a.PG.57.FN.MCS"
+                  },
+                  {
+                     "tipo": "acentuacao",
+                     "posicao": "8",
+                     "conteudo": "enfeitarte",
+                     "codigo": "AAD.01a.PG.57.FN.MCS"
+                  }
+               ]
+            },
+            {
+               "tipo": "verso",
+               "texto_critico": "As estrelas confundiam com o ofuscar dos teus olhos;",
+               "aparato": []
+            },
+            {
+               "tipo": "verso",
+               "texto_critico": "A noite a florir, os teus encantos em arpejos,",
+               "aparato": [
+                  {
+                     "tipo": "atualizacao_ortografica",
+                     "posicao": "9",
+                     "conteudo": "harpeijos",
+                     "codigo": "AAD.01a.PG.57.FN.MCS"
+                  }
+               ]
+            },
+            {
+               "tipo": "verso",
+               "texto_critico": "De beijar as tuas faces, as rosas brincavam.",
+               "aparato": []
+            },
+            {
+               "tipo": "verso",
+               "texto_critico": "E a fragrância dos perfumes te incensavam!",
+               "aparato": [
+                  {
+                     "tipo": "acentuacao",
+                     "posicao": "3",
+                     "conteudo": "fragancia (s.a)",
+                     "codigo": "AAD.01a.PG.57.FN.MCS"
+                  }
+               ]
+            },
+            {
+               "tipo": "quebra_de_linha",
+               "aparato": []
+            },
+            {
+               "tipo": "verso",
+               "texto_critico": "E a tua beleza juvenil balsamisante,",
+               "aparato": []
+            },
+            {
+               "tipo": "verso",
+               "texto_critico": "Não empanava o cenário amplo, da tua glória;",
+               "aparato": [
+                  {
+                     "tipo": "outros",
+                     "posicao": "2",
+                     "conteudo": "senario (s.a)   ",
+                     "codigo": "AAD.01a.PG.57.FN.MCS"
+                  },
+                  {
+                     "tipo": "acentuacao",
+                     "posicao": "8",
+                     "conteudo": "  gloria (s.a)",
+                     "codigo": "AAD.01a.PG.57.FN.MCS"
+                  }
+               ]
+            },
+            {
+               "tipo": "verso",
+               "texto_critico": "O céu azul emoldurava-te com o estrelar.",
+               "aparato": []
+            },
+            {
+               "tipo": "verso",
+               "texto_critico": "E os corações, palpitavam em te ver brilhar!",
+               "aparato": []
+            },
+            {
+               "tipo": "local",
+               "texto_critico": "Feira, 30 de Abril de 1957.",
+               "aparato": []
+            },
+            {
+               "tipo": "codigo",
+               "texto_critico": "N.281-1-1",
+               "aparato": []
+            }
+         ]
+      }
+   ],
+   "titulo": "“PRINCESINHA DA GRAÇA”",
+   "autor": "Alcina Dantas",
+   "codigo": "AAD.01a.PG.57.FN.MCS"
+}

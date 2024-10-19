@@ -1,0 +1,13 @@
+mat-grid-tile {
+    padding: 10px;
+  }
+
+  mat-grid-list {    
+    margin-top: 15px;
+  }
+
+  .picture-card {
+    max-width: 400px;
+    margin: 10px;
+  }
+  

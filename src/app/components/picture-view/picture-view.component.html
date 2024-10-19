@@ -1,0 +1,18 @@
+<div id="picture_view">
+    <div class="example-button-container">
+        <button mat-fab color="secondary" aria-label="Example icon button with a bookmark icon" (click)="backClicked()">
+        <mat-icon>arrow_back</mat-icon>
+        </button>
+    </div>
+    <mat-card class="picture-card" routerLink = "/picture/{{document.codigo}}">
+        <mat-card-header>
+        <mat-card-title>{{document.titulo}}</mat-card-title>
+        </mat-card-header>
+        <img mat-card-image src="{{getPathForPicture(document.codigo)}}" alt="{{document.titulo}}">
+        <mat-card-content>
+        <p>
+            Encontrado em {{document.encontrado_em}}
+        </p>
+        </mat-card-content>
+    </mat-card>
+<div>

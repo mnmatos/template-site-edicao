@@ -1,0 +1,15 @@
+.presentation-block{
+    margin: 10px;
+}
+
+.presentation-block h1{
+    text-align: center;
+}
+
+.presentation-block img{
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    height: 400px;
+    margin-bottom: 20px;
+}

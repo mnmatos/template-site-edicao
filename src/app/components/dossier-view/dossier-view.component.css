@@ -1,0 +1,40 @@
+mat-grid-tile {
+    padding: 10px;
+  }
+
+  mat-grid-list {    
+    margin-top: 15px;
+  }
+
+  .picture-card {
+    max-width: 400px;
+    margin: 10px;
+  }
+
+  .mat-card-title{
+    font-size: 18px;
+  }
+
+  .mat-card-image {
+    max-height: 200px;
+  }
+
+  .mat-card-doc-icon {
+    margin-left: 100px;
+    max-width: 100px;
+    max-height: 100px;
+  }
+
+  .mat-grid-tile button {
+    margin-left: 100px;
+    margin-bottom: 20px;
+  }
+
+  .dossier-block{
+    margin: 20px;
+  }
+
+  .dossier-block h1, h2{
+      text-align: center;
+  }
+    

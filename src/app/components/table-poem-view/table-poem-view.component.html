@@ -1,0 +1,59 @@
+<div id="container" >
+    {{resetIndex()}}
+    <table class="poem_table">
+    <tr> 
+        <td class="num_column"></td>
+        <td class="celula_centralizada"><b>{{this.jsonFormData.titulo.toUpperCase()}} </b></td>
+        <td  class="aparato_column"></td>
+    </tr>
+    
+        <tr>
+            <td></td>
+            <td class="dedicatoria_column">
+                <ng-container *ngFor="let linha of this.jsonFormData.edicao[0].linhas;">
+                    <p  *ngIf="linha.tipo === 'dedicatoria'" [innerHTML]="'<i>'+linha.texto_critico+'</i>'"></p>
+                </ng-container>
+            </td>
+            <td  class="aparato_column">
+                <ng-container *ngFor="let linha of this.jsonFormData.edicao[0].linhas;">
+                    <div *ngIf="linha.tipo == 'dedicatoria'">
+                        <span *ngFor="let textoComAparato of getAparato(linha); index as i;"  class="aparato_linha">
+                            <p *ngIf="textoComAparato.aparato !== undefined && ( ['atualizacao_ortografica', 'acentuacao', 'concordancia', 'pontuacao', 'desenvolvimento_abreviatura', 'leitura_conjecturada', 'dano_suporte', 'desenvolvimento_abreviatura', 'desenvolvimento_data', 'outros'].indexOf(textoComAparato.aparato.tipo) > -1)"><i>{{getTextoAparato(textoComAparato)}}</i></p>
+                            <p *ngIf="textoComAparato.aparato !== undefined && textoComAparato.aparato.tipo === 'nota_referencia'">{{textoComAparato.aparato.conteudo}}</p>            
+                        </span>
+                    </div>
+                </ng-container>
+            </td>
+        </tr>
+   
+    <tr> 
+        <td></td> <td></td> <td></td> 
+    </tr>  
+    <ng-container *ngFor="let linha of this.jsonFormData.edicao[0].linhas;">
+        <tr *ngIf="linha.tipo === 'quebra_de_linha'"> 
+            <td></td> <td></td> <td></td> 
+        </tr>        
+        <tr *ngIf="linha.tipo === 'verso'">
+            <td class="num_column" *ngIf="increaseIndex()%5==0 as value; else elseBlock">{{getIndex()}}</td>
+            <ng-template #elseBlock><td></td></ng-template>
+            <td class="texto_column" [innerHTML]="linha.texto_critico" ></td>
+            <td  class="aparato_column">
+                <span *ngFor="let textoComAparato of getAparato(linha); index as i;"  class="aparato_linha">
+                    <p *ngIf="textoComAparato.aparato !== undefined && ( ['atualizacao_ortografica', 'acentuacao', 'concordancia', 'pontuacao', 'desenvolvimento_abreviatura', 'leitura_conjecturada', 'dano_suporte', 'desenvolvimento_abreviatura', 'desenvolvimento_data', 'outros'].indexOf(textoComAparato.aparato.tipo) > -1)"><i>{{getTextoAparato(textoComAparato)}}</i></p>
+                    <p *ngIf="textoComAparato.aparato !== undefined && textoComAparato.aparato.tipo === 'nota_referencia'">{{textoComAparato.aparato.conteudo}}</p>            
+                </span>
+            </td>
+        </tr>
+        <tr class="num_column" *ngIf="linha.tipo === 'data' || linha.tipo === 'nome_publicado'"> 
+            <td>
+            <td  class="texto_column" >{{linha.texto_critico}}</td>
+            <td  class="aparato_column">
+                <span *ngFor="let textoComAparato of getAparato(linha); index as i;" class="aparato_linha">
+                    <p *ngIf="textoComAparato.aparato !== undefined && ( ['atualizacao_ortografica', 'acentuacao', 'concordancia', 'pontuacao', 'desenvolvimento_abreviatura', 'leitura_conjecturada', 'dano_suporte', 'desenvolvimento_abreviatura', 'desenvolvimento_data', 'outros'].indexOf(textoComAparato.aparato.tipo) > -1)"><i>{{getTextoAparato(textoComAparato)}}</i></p>
+                    <p *ngIf="textoComAparato.aparato !== undefined && textoComAparato.aparato.tipo === 'nota_referencia'">{{textoComAparato.aparato.conteudo}}</p>            
+                </span>
+            </td>
+        </tr>
+    </ng-container>
+  </table>
+</div>

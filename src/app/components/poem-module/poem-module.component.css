@@ -1,0 +1,512 @@
+@import url(https://fonts.googleapis.com/css?family=Abel);
+@import url(https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.3/css/font-awesome.css);
+
+.area_poema{
+  margin-bottom: 40px;
+}
+
+.textoCriticoHover:hover {
+  background-color:#dddcdc;
+  cursor:pointer
+}
+
+.aparatoHover {
+  display:none;
+}
+
+.textoCriticoHover:hover .aparatoHover {
+  display:block;
+  position:absolute;
+  background-color:#dddcdc;   
+  z-index: 10;    
+  top:40px;
+  padding: 10px;
+}
+
+.textoCriticoHover:hover .aparatoHoverEnd {
+  top:-100px;
+}
+
+body {
+  background-color: #fefdfb;
+  color: #555;
+  font-family: 'Abel', sans-serif;
+  font-size: 1em;
+  font-weight: normal;
+  margin: 0;
+}
+
+a:link, a:visited, a:active {
+  color: inherit;
+  text-decoration: none;
+}
+
+a:hover {
+  color: #000;
+  text-decoration: underline;
+}
+
+.right {
+  text-align: right;
+}
+
+.hide {
+  display: none;
+}
+
+nav {
+  display: table;
+  table-layout: fixed;
+  width: 75%;
+  margin: 0 auto;
+}
+
+#menu {
+  width: 100%;
+  min-height: 35px;
+  background-color: #000;
+  position: fixed;
+  z-index: 100;
+  top: 0;
+  left: 0;
+}
+
+  #menu a {
+    background-color: inherit;
+    color: #fff;
+  }
+
+ul#topnav {
+  display: table-row;
+  padding: 0;
+  overflow: hidden;
+  position: relative;
+  bottom: 0;
+}
+
+  ul#topnav li {
+    list-style-type: none;
+    display: table-cell;
+    text-align: center;
+    vertical-align: middle;
+  }
+
+    ul#topnav li a {
+      display: block;
+      padding: 8px;
+      text-decoration: underline;
+    }
+
+
+      ul#topnav li a:hover {
+        color: #777;
+        text-decoration: none;
+      }
+
+    ul#topnav li > ul {
+      list-style-type: none;
+      margin: 0;
+      padding: 0;
+    }
+
+
+      ul#topnav li > ul > li {
+        font-size: 120%;
+        float: left;
+        display: inline;
+        padding-right: 5px;
+      }
+
+#container {
+  width: 100%;
+  margin-top: 48px;
+}
+
+#pageheader {
+  display: table;
+  width: 80%;
+  margin: auto;
+}
+
+.pageitem {
+  display: table;
+  table-layout: fixed;
+  width: 100%;
+  margin-bottom: 10px;
+  padding-top: 10px;
+  text-align: justify;
+}
+
+  .pageitem h1 {
+    font-size: 250%;
+    font-weight: normal;
+    color: #555;
+    margin: 0;
+    text-align: left;
+  }
+
+  .pageitem h2, .title {
+    font-size: 180%;
+    background-color: inherit;
+    color: #444;
+    margin-top: 0;
+  }
+
+  .pageitem .title {
+    text-align: center;
+  }
+
+  .pageitem p {
+    padding: 0;
+    margin: 1em 0;
+    font-size: 115%;
+    line-height: 175%;
+  }
+
+  .pageitem a {
+    text-decoration: underline;
+  }
+
+  .pageitem .col {
+    padding: 0 2% 0 1%;
+  }
+
+  .pageitem .limites_poema {
+    position: relative;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, 0%);
+  }
+
+  .pageitem .limites_poema_sem_facsimile {
+    padding-left: 20%;
+    padding-right: 20%;
+  }
+
+
+  .pageitem .titulo {
+    text-align: center;
+    text-align: left;
+    position: relative;
+    left: 20%;
+  }
+
+  .pageitem .titulo_centralizado {
+    text-align: center;
+  }
+
+  .pageitem .texto_critico_conteudo {
+    padding-left: 30px;
+    white-space: nowrap;
+  }
+
+  .pageitem .texto_critico {
+    font-weight: bold;
+    text-align: left;
+    position: relative;
+  }
+
+  .pageitem .dedicatoria {
+    font-size: 0.8em;
+    font-weight: bold;
+    text-align: right;
+    position: relative;
+    margin-left: 30%;
+    margin-right: 30%;
+  }
+
+  .pageitem .dedicatoria_centralizado {
+    font-size: 0.8em;
+    font-weight: bold;
+    text-align: right;
+    position: relative;
+    margin-left: 30%;
+    margin-right: 30%;
+  }
+
+  .pageitem .dedicatoria_com_facsimile {
+    margin-left: 30%;
+    margin-right: 0%;
+  }
+
+  .pageitem .col_texto {
+    width: 100%;
+  }
+
+  .pageitem .aparato {
+    color: lightslategrey;
+    width: 40%;
+  }
+
+  .pageitem .aparato_nota {
+    color: lightslategrey;
+    width: 40%;
+  }
+
+  .pageitem .enumeracao {
+    color: lightslategrey;
+    float: left;
+    position: absolute;
+  }
+
+.facsimile, .aparato-nota {
+  float: left;
+  position: absolute;
+  width: 400px;
+}
+
+.facsimile-image {
+  width: 400px;
+}
+
+.image-nota{
+  width: 400px;
+  margin-top: 10px;
+}
+
+.video {
+  position: fixed;
+  bottom: 15px;
+  right: 10px;
+  max-width: 560px;
+  max-height: 316px;
+  width: 560px;
+  height: 316px;
+  z-index: 1;
+}
+
+.tool_box > button, input {
+  margin: 5px;
+  height: 60px;
+  position: relative;
+  top: 10px;
+  margin-bottom: 15px;
+  vertical-align: middle
+}
+
+.col {
+  display: table-cell;
+  font-size: 1em;
+}
+
+.bigFont {
+  font-size: 24px;
+}
+
+.smallFont {
+  font-size: 18px;
+}
+
+#footer {
+  display: table;
+  width: 100%;
+  margin-bottom: 15px;
+  padding: 15px 0;
+  text-align: left;
+  font-size: 89%;
+  color: #999;
+}
+
+  #footer p {
+    text-align: left;
+    padding: 0;
+  }
+
+#credits {
+  display: table;
+  table-layout: fixed;
+  width: 100%;
+  font-size: 12px;
+  color: #777;
+  line-height: 100%;
+  text-align: center;
+}
+
+#show-menu {
+  display: none;
+}
+
+.open, .close {
+  background-color: inherit;
+  color: #fff;
+  text-align: right;
+  font-weight: normal;
+  font-size: 1.5em;
+  padding: 0;
+  position: absolute;
+  top: 10%;
+  right: 5%;
+  display: none;
+}
+
+
+/* start make items responsive */
+@media screen and (max-width : 1024px) {
+
+
+  /* menu */
+  ul#topnav {
+    display: none;
+  }
+
+  .hide, .open {
+    display: block;
+  }
+
+
+  #show-menu:checked ~ .open {
+    display: none;
+  }
+
+  #show-menu:checked ~ .close {
+    font-size: 1.6em;
+    display: block;
+  }
+
+  #show-menu:checked ~ ul#topnav {
+    display: block;
+    position: absolute;
+    top: 100%;
+    right: 0%;
+    width: 100%;
+    margin: 0;
+    margin-bottom: 1%;
+    overflow: visible;
+  }
+
+  ul#topnav li {
+    display: block;
+    text-align: center;
+    margin: 0;
+    background-color: #000;
+    padding: 1% 0;
+  }
+
+    ul#topnav li a {
+      display: block;
+      padding-right: 0%;
+      padding-bottom: 5px;
+      text-decoration: none;
+    }
+
+      ul#topnav li a:hover {
+        text-decoration: underline;
+      }
+
+
+    ul#topnav li > ul {
+      display: table;
+      float: none;
+      table-layout: fixed;
+      margin: 0 auto;
+    }
+
+      ul#topnav li > ul > li {
+        padding-left: 10px;
+      }
+
+  /* other items */
+  .pageitem h2, .title {
+    font-size: 120%;
+  } 
+
+  .pageitem .dedicatoria {
+    font-size: 0.8em;
+    font-weight: bold;
+    text-align: right;
+    position: relative;
+    margin-left: 0%;
+    margin-right: 0%;
+  }
+
+  .pageitem .dedicatoria_centralizado {
+    font-size: 0.8em;
+    font-weight: bold;
+    text-align: right;
+    position: relative;
+    margin-left: 0%;
+    margin-right: 0%;
+  }
+
+  .pageitem .texto_critico {
+    font-weight: bold;
+    text-align: left;
+    position: relative;
+  }
+
+  .pageitem p {
+    padding: 0;
+    line-height: 150%;
+    font-size: 99%;
+  }
+
+  .pageitem .col {
+    padding: 0 3% 0 2%;
+  }
+
+  .pageitem .aparato {
+    padding: 0 3% 0 2%;
+  }
+
+  .facsimile, .aparato-nota {
+    float: left;
+    position: absolute;
+    width: 300px;
+  }
+
+  
+
+  .facsimile-image {
+    width: 300px;
+  }
+
+  .image-nota{
+    width: 300px;
+  }
+  
+}
+
+@media screen and (max-width : 700px) {
+
+  .col {
+    float: left;
+    margin: auto;
+    width: 100%;
+  }
+
+  #credits p {
+    text-align: center;
+    margin-bottom: -10%;
+  }
+
+
+  .facsimile, .aparato-nota {
+    float: left;
+    position: static;
+    width: 200px;
+  }
+  
+
+  .facsimile-image {
+    width: 200px;
+  }
+  
+  .image-nota{
+    width: 200px;
+  }  
+
+  .video {
+    width: 280px;
+    height: 158px;
+  }
+
+}
+/* end make items responsive */
+
+@media print {
+  .user_tools { display: none  } 
+}
+
+.link-aparato{
+  color: blue !important;
+}

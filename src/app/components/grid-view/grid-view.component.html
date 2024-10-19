@@ -1,0 +1,16 @@
+<mat-grid-list cols="3" rowHeight="1:1">
+    <mat-grid-tile *ngFor="let entry of entries">
+        <mat-card class="picture-card" routerLink = "/picture/{{entry.codigo}}">
+            <mat-card-header>
+              <mat-card-title>{{docMap.get(entry.codigo).titulo}}</mat-card-title>
+            </mat-card-header>
+            <img mat-card-image src="{{getPathForPicture(entry.codigo)}}" alt="{{docMap.get(entry.codigo).titulo}}">
+            <mat-card-content>
+              <p>
+                Encontrado em {{docMap.get(entry.codigo).encontrado_em}}
+              </p>
+            </mat-card-content>
+        </mat-card>
+    </mat-grid-tile>
+</mat-grid-list>
+

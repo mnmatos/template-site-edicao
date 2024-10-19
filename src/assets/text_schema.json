@@ -1,0 +1,462 @@
+{
+  "$schema": "http://json-schema.org/draft-04/hyper-schema#",
+  "type": "object",
+  "properties": {
+    "titulo": {
+      "type": "string",
+      "description": "Título"
+    },
+    "tipo": {
+      "type": "string",
+      "description": "Gênero textual",
+      "widget": "select",
+      "oneOf": [
+        {
+          "enum": [
+            "poema"
+          ],
+          "description": "Poema"
+        },
+        {
+          "enum": [
+            "conto"
+          ],
+          "description": "Conto"
+        },
+        {
+          "enum": [
+            "romance"
+          ],
+          "description": "Romance"
+        },
+        {
+          "enum": [
+            "texto_teatral"
+          ],
+          "description": "Texto Teatral"
+        },
+        {
+          "enum": [
+            "texto_teatral"
+          ],
+          "description": "Autobiografia"
+        },
+        {
+          "enum": [
+            "texto_teatral"
+          ],
+          "description": "Inespecífico"
+        }
+        
+      ],
+      "default": "poema"
+    },
+    "autor": {
+      "type": "string",
+      "description": "Autor(a/ie)"
+    },
+    "codigo": {
+      "type": "string",
+      "description": "Código"
+    },
+    "publicacao": {
+      "type": "array",
+      "description": "Testemunho",
+      "items": {
+        "type": "object",
+        "properties": {
+          "codigo": {
+            "type": "string",
+            "description": "Código"
+          },
+          "data": {
+            "type": "string",
+            "description": "Data"
+          },
+          "local": {
+            "type": "string",
+            "description": "Local"
+          },
+          "circulacao": {
+            "type": "string",
+            "description": "Circulação"
+          },
+          "suporte": {
+            "type": "string",
+            "description": "Suporte"
+          },
+          "titulo": {
+            "type": "string",
+            "description": "Título"
+          },
+          "descricao": {
+            "type": "string",
+            "description": "Descrição",
+            "widget":"textArea"
+          },
+          "audio_descricao": {
+            "type": "string",
+            "description": "Audiodescrição"
+          },
+          "nome_autor": {
+            "type": "string",
+            "description": "Autor(a/ie)"
+          },
+          "encontrado_em": {
+            "type": "object",
+            "description": "Encontrado em", 
+            "properties": {
+              "tipo": {
+                "type": "string",
+                "description": "Tipo"
+              },
+              "local": {
+                "type": "string",
+                "description": "Instituição"
+              }
+            },
+            "required": [
+              "tipo",
+              "local"
+            ]
+          },          
+          "texto": {
+            "type": "array",
+            "description": "Texto",
+            "items": {
+              "type": "string"
+            }
+          }
+        },
+        "required": [
+          "codigo",
+          "data",
+          "local",
+          "circulacao",
+          "suporte",
+          "titulo",
+          "encontrado_em",
+          "nome_autor",
+          "texto"
+        ]
+      }
+    },
+    "edicao": {
+      "type": "array",
+      "description": "Edições",
+      "items": {
+        "type": "object",
+        "properties": {
+          "criterios": {
+            "type": "object",
+            "description": "Critérios",
+            "properties": {
+              "enumeracao_por_linha": {
+                "type": "integer",
+                "description": "Enumeração por linha",
+                "widget": "integer"
+              },
+              "orientacao_titulo": {
+                "type": "string",
+                "description": "Orientação do título",
+                "widget": "select",
+                "oneOf": [
+                  {
+                    "enum": [
+                      "esquerda"
+                    ],
+                    "description": "Esquerda"
+                  },
+                  {
+                    "enum": [
+                      "direita"
+                    ],
+                    "description": "Direita"
+                  },
+                  {
+                    "enum": [
+                      "centralizado"
+                    ],
+                    "description": "Centralizado"
+                  }
+                ],
+                "default": "direita"
+              },
+              "orientacao_local_data": {
+                "type": "string",
+                "description": "Orientação do local, data e nome do(a) autor(a/ie)",
+                "widget": "select",
+                "oneOf": [
+                  {
+                    "enum": [
+                      "esquerda"
+                    ],
+                    "description": "Esquerda"
+                  },
+                  {
+                    "enum": [
+                      "direita"
+                    ],
+                    "description": "Direita"
+                  },
+                  {
+                    "enum": [
+                      "centralizado"
+                    ],
+                    "description": "Centralizado"
+                  }
+                ],
+                "default": "direita"
+              },
+              "texto_criterios": {
+                "type": "array",
+                "description": "Critérios",
+                "items": {
+                  "description": "Critério",
+                  "type": "string"
+                }
+              }
+            },
+            "required": [
+              "enumeracao_por_linha",
+              "orientacao_titulo"
+            ]
+          },
+          "video_libras":{
+            "type": "string",
+            "description": "Link para vídeo em Libras do poema"
+          },
+          "video_libras_aparato":{
+            "type": "string",
+            "description": "Link para vídeo em Libras do aparato"
+          },
+          "linhas": {
+            "type": "array",
+            "description": "linhas",
+            "items": {
+              "type": "object",
+              "properties": {
+                "tipo": {
+                  "type": "string",
+                  "description": "tipo",
+                  "widget": "select",
+                  "oneOf": [
+                    {
+                      "enum": [
+                        "dedicatoria"
+                      ],
+                      "description": "Dedicatória"
+                    },
+                    {
+                      "enum": [
+                        "cabecalho"
+                      ],
+                      "description": "Cabeçalho"
+                    },
+                    {
+                      "enum": [
+                        "titulo"
+                      ],
+                      "description": "Título"
+                    },
+                    {
+                      "enum": [
+                        "quebra_de_linha"
+                      ],
+                      "description": "Quebra de linha ou Fim de estrofe/parágrafo"
+                    },
+                    {
+                      "enum": [
+                        "verso"
+                      ],
+                      "description": "Verso"
+                    },
+                    {
+                      "enum": [
+                        "data"
+                      ],
+                      "description": "Data"
+                    },
+                    {
+                      "enum": [
+                        "local"
+                      ],
+                      "description": "Local"
+                    },
+                    {
+                      "enum": [
+                        "nome_publicado"
+                      ],
+                      "description": "Nome publicado"
+                    },
+                    {
+                      "enum": [
+                        "codigo"
+                      ],
+                      "description": "Código"
+                    }
+                  ],
+                  "default": "verso"
+                },
+                "texto_critico": {
+                  "type": "string",
+                  "description": "Texto crítico"
+                },
+                "aparato": {
+                  "type": "array",
+                  "description": "Aparato",
+                  "items": {
+                    "type": "object",
+                    "properties": {
+                      "tipo": {
+                        "type": "string",
+                        "description": "Tipo",
+                        "widget": "select",
+                        "oneOf": [
+                          {
+                            "enum": [
+                              "atualizacao_ortografica"
+                            ],
+                            "description": "Atualização ortográfica"
+                          },
+                          {
+                            "enum": [
+                              "acentuacao"
+                            ],
+                            "description": "Acentuação"
+                          },
+                          {
+                            "enum": [
+                              "concordancia"
+                            ],
+                            "description": "Concordância"
+                          },
+                          {
+                            "enum": [
+                              "pontuacao"
+                            ],
+                            "description": "Pontuação"
+                          },
+                          {
+                            "enum": [
+                              "nota_referencia"
+                            ],
+                            "description": "Aparato de nota de dossiê"
+                          },
+                          {
+                            "enum": [
+                              "nota_referencia_poema"
+                            ],
+                            "description": "Aparato de nota de poema"
+                          },
+                          {
+                            "enum": [
+                              "nota_referencia_link"
+                            ],
+                            "description": "Aparato de nota de link externo"
+                          },
+                          {
+                            "enum": [
+                              "nota_referencia_imagem"
+                            ],
+                            "description": "Aparato de nota de imagem"
+                          },
+                          {
+                            "enum": [
+                              "desenvolvimento_abreviatura"
+                            ],
+                            "description": "Desenvolvimento de abreviatura"
+                          },
+                          {
+                            "enum": [
+                              "leitura_conjecturada"
+                            ],
+                            "description": "Leitura conjecturada"
+                          }, 
+                          {
+                            "enum": [
+                              "dano_suporte"
+                            ],
+                            "description": "Dano no suporte"
+                          },  
+                          {
+                            "enum": [
+                              "desenvolvimento_abreviatura"
+                            ],
+                            "description": "Maiúscula"
+                          },        
+                          {
+                            "enum": [
+                              "desenvolvimento_data"
+                            ],
+                            "description": "Desenvolvimento da data"
+                          },
+                          {
+                            "enum": [
+                              "outros"
+                            ],
+                            "description": "Outros"
+                          }                                 
+                        ],
+                        "default": "atualizacao_ortografica"
+                      },
+                      "posicao": {
+                        "type": "string",
+                        "description": "Posição"
+                      },
+                      "conteudo": {
+                        "type": "string",
+                        "description": "Conteúdo"
+                      },
+                      "codigo": {
+                        "type": "string",
+                        "description": "Código"
+                      },   
+                      "referencia": {  
+                        "type": "object",                        
+                        "description": "Referência externa (opcional)",
+                        "properties": {
+                          "codigo": {
+                            "type": "string",
+                            "description": "Código de dossiê/Poema"
+                          },
+                          "link": {
+                            "type": "string",
+                            "description": "Link para referência externa"
+                          }
+                        }
+                      }       
+                    },
+                    "required": [
+                      "tipo",
+                      "conteudo",
+                      "codigo"
+                    ]
+                  }
+                }
+              },
+              "required": [ 
+                "tipo",
+                "texto_critico"
+              ]
+            }
+          }
+        },
+        "required": [
+          "criterios",
+          "linhas"
+        ]
+      }
+
+    }
+  },
+  
+  "required": [
+    "titulo",
+    "tipo",
+    "autor",
+    "codigo",
+    "edicao",
+    "publicacao"
+  ]
+  }

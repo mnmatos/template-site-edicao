@@ -1,0 +1,7 @@
+@media print {
+    * { display: none  } 
+}
+
+#search_bar {
+    box-sizing : inherit;
+}

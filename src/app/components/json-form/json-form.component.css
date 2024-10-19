@@ -1,0 +1,28 @@
+::ng-deep fieldset div {
+  padding-left: 10px;
+  padding-right: 10px;
+  margin-bottom:10px;
+}
+
+::ng-deep fieldset > div{
+  margin-bottom: 10px;
+  border-color: lightcoral;
+  border-color: lightcoral;
+  border: outset;
+}
+
+
+::ng-deep sf-form-object button{
+  margin-left: 10px;
+}
+
+::ng-deep .formHelp {
+  margin-right: 10px;
+}
+
+::ng-deep .array-remove-button {
+  background-color: lightsalmon;
+  color: antiquewhite !important;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}

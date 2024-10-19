@@ -1,0 +1,19 @@
+.edicao-block{
+    margin: 10px;
+}
+
+.edicao-block h1{
+    text-align: center;
+}
+
+.edicao-block img{
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    height: 300px;
+    margin-bottom: 20px;
+}
+
+mat-expansion-panel {
+    margin-top: 10px;
+}

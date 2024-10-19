@@ -1,0 +1,7 @@
+<sf-form [schema]="mySchema" [(model)]="jsonFormData"></sf-form>{{jsonFormData | json}}
+<button (click)="downloadJson()">download JSON</button>
+<button (click)="generateSample()">Gerar exemplo</button>
+
+<div *ngIf="sample != undefined">
+    <app-poem-module [jsonFormData]="sample"></app-poem-module>
+</div>

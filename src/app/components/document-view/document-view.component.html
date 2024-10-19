@@ -1,0 +1,56 @@
+<div class="example-button-container back-button">
+    <button mat-fab color="secondary" aria-label="Example icon button with a bookmark icon" (click)="backClicked()">
+    <mat-icon>arrow_back</mat-icon>
+    </button>
+</div>
+<div id="infoPanel">    
+<h2>{{document.titulo}}</h2>
+<div class="pageitem">
+    <div class="col" *ngFor="let arquivo of getArquivosForCode()">
+        <h3>{{arquivo}}</h3>
+        <div>
+            <div *ngIf="isImage(); else elseBlock">    
+                <img class="doc-picture" src="{{getPathForFileByName(document.codigo, arquivo)}}" alt="{{document.titulo}}">
+            </div>
+            <ng-template #elseBlock>
+                <img class="mat-card-doc-icon generic-picture" src="assets\images\icons\documento.jpg" alt="{{document.titulo}}">
+            </ng-template>
+        </div>
+        <div>
+            <button mat-button color="primary" (click)="downloadFile(document.codigo, arquivo)">Download</button>  
+        </div>
+    </div>
+</div>
+<div >
+    <table class="table-doc">
+        <tr>
+            <td>Título</td>
+            <td>{{document.titulo}}</td>
+        </tr>
+        <tr>
+            <td>Autor(a/ie)</td>
+            <td>{{getAutorNames()}}</td>
+        </tr>
+        <tr>
+            <td>Classe produção</td>
+            <td>{{getClasseProducao()}}</td>
+        </tr>
+        <tr>
+            <td>Instituição</td>
+            <td>{{document.instituicao_custodia}}</td>
+        </tr>
+        <tr>
+            <td>Encontrado em</td>
+            <td>{{document.encontrado_em}}</td>
+        </tr>
+        <tr *ngIf="document.descricao !== undefined && document.descricao !== ''">
+            <td>Descrição</td>
+            <td><p class="full_text">{{document.descricao}}</p></td>
+        </tr>
+        <tr *ngIf="document.transcricao !== undefined && document.transcricao !== ''">
+            <td>Transcrição</td>
+            <td><p class="full_text">{{document.transcricao}}</p></td>
+        </tr>
+    </table>
+</div>
+</div>

@@ -1,0 +1,46 @@
+#infoPanel {
+    padding: 50px;
+    text-align: center;    
+    display: inline;
+}
+
+.back-button{
+    margin: 10px;
+}
+
+.doc-picture{
+    max-width: 400px;
+    max-height: 600px;
+}
+
+.generic-picture{
+    max-width: 200px;
+    max-height: 200px;
+}
+
+.table-doc{
+    margin: 20px;
+    border: 1px solid black;
+    border-color: #f56a6a;
+}
+
+.table-doc tr,td{
+    border: 1px solid black;
+    border-color: #f56a6a;
+}
+
+.pageitem {
+    display: flex;
+    margin: 20px;
+    margin-bottom: 50px;
+}
+
+.col{
+    flex: 1;
+}
+
+.full_text{
+    margin-bottom: 2rem;
+    white-space:pre-wrap;
+    text-align: left;
+}

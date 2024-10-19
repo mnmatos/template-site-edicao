@@ -1,0 +1,174 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "type": "object",
+  "properties": {
+    "titulo": {
+      "type": "string"
+    },
+    "tipo": {
+      "type": "string"
+    },
+    "autor": {
+      "type": "string"
+    },
+    "codigo": {
+      "type": "string"
+    },
+    "edicao": {
+      "type": "array",
+      "items": [
+        {
+          "type": "object",
+          "properties": {
+            "criterios": {
+              "type": "object",
+              "properties": {
+                "enumeracao_por_linha": {
+                  "type": "integer"
+                },
+                "orientacao_titulo": {
+                  "type": "string"
+                },
+                "texto_criterios": {
+                  "type": "array",
+                  "items": [
+                    {
+                      "type": "string"
+                    }
+                  ]
+                }
+              },
+              "required": [
+                "enumeracao_por_linha",
+                "orientacao_titulo",
+                "texto_criterios"
+              ]
+            },
+            "linhas": {
+              "type": "array",
+              "items": [
+                {
+                  "type": "object",
+                  "properties": {
+                    "tipo": {
+                      "type": "string"
+                    },
+                    "texto_critico": {
+                      "type": "string"
+                    },
+                    "aparato": {
+                      "type": "array",
+                      "items": [
+                        {
+                          "type": "object",
+                          "properties": {
+                            "tipo": {
+                              "type": "string"
+                            },
+                            "conteudo": {
+                              "type": "string"
+                            },
+                            "codigo": {
+                              "type": "string"
+                            }
+                          },
+                          "required": [
+                            "tipo",
+                            "conteudo",
+                            "codigo"
+                          ]
+                        }
+                      ]
+                    }
+                  },
+                  "required": [
+                    "tipo",
+                    "texto_critico",
+                    "aparato"
+                  ]
+                },
+              ]
+            }
+          },
+          "required": [
+            "criterios",
+            "linhas"
+          ]
+        }
+      ]
+    },
+    "publicacao": {
+      "type": "array",
+      "items": [
+        {
+          "type": "object",
+          "properties": {
+            "codigo": {
+              "type": "string"
+            },
+            "data": {
+              "type": "string"
+            },
+            "local": {
+              "type": "string"
+            },
+            "circulacao": {
+              "type": "string"
+            },
+            "suporte": {
+              "type": "string"
+            },
+            "titulo": {
+              "type": "string"
+            },
+            "encontrado_em": {
+              "type": "object",
+              "properties": {
+                "tipo": {
+                  "type": "string"
+                },
+                "local": {
+                  "type": "string"
+                }
+              },
+              "required": [
+                "tipo",
+                "local"
+              ]
+            },
+            "nome_autor": {
+              "type": "string"
+            },
+            "texto": {
+              "type": "array",
+              "items": [
+                {
+                  "type": "string"
+                }
+              ]
+            }
+          },
+          "required": [
+            "codigo",
+            "data",
+            "local",
+            "circulacao",
+            "suporte",
+            "titulo",
+            "encontrado_em",
+            "nome_autor",
+            "texto"
+          ]
+        }
+      ]
+    }
+  },
+  "required": [
+    "titulo",
+    "tipo",
+    "autor",
+    "codigo",
+    "edicao",
+    "publicacao"
+  ]
+}

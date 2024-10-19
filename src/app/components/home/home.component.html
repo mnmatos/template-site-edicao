@@ -1,0 +1,25 @@
+ <!-- Banner -->
+<section id="banner">
+  <div class="content">
+    <header>
+      <h1>
+        TEMPLATE DE HIPEREDIÇÃO 
+      </h1>
+    </header>
+    <ul class="actions">
+      <li><a href="/presentation" class="button big">Saiba mais</a></li>
+    </ul>
+  </div> 
+</section>
+<section id="home_content">
+  <h1>
+    Abaixo está um exemplo de hiperedição carregado diretamente do JSON
+  </h1>
+  <div class="poem_container" *ngFor="let data of formData">
+    <app-poem-module [jsonFormData]="data"></app-poem-module>
+  </div>
+  <br>
+  <div class="veja_mais">
+    <a href="/edition" class="button big">Veja mais</a>
+  </div>
+</section>

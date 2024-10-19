@@ -1,0 +1,43 @@
+<div id="sidebar" [ngClass]="{'inactive' : isInactive}">
+  <a id="menu_toogle" class="toggle" (click)="toogleMenu()">Toggle</a>
+    <div class="inner">    
+
+      <!-- Search -->
+      <section id="search" class="alt">
+        <form (ngSubmit)="searchSubmit()" (keydown)="keyDownFunction($event)">
+            <input id="search_bar" type="text" placeholder="Busque poemas" aria-label="Assignee" matInput [formControl]="myControl" [matAutocomplete]="auto">
+            <mat-autocomplete #auto="matAutocomplete" [displayWith]="displayFn" (optionSelected)='searchSubmit()'>
+              <mat-option *ngFor="let option of filteredOptions | async" [value]="option" >
+                {{option.name}}
+              </mat-option>
+            </mat-autocomplete>
+        </form>
+      </section>
+
+      <!-- Menu -->
+      <nav id="menu">
+        <header class="major">
+          <h2>Menu</h2>
+        </header>
+        <ul>
+          <li><a href="/home">Início</a></li>
+          <li><a href="/presentation">Apresentação</a></li>
+          <li><a href="/author">Autora</a></li>
+          <li><a href="/acervo">Acervo</a></li>          
+          <li>  
+            <span class="opener">-&ensp;Dossiê</span>
+            <ul>  
+              <li><a href="/dossie/producao">Produção intelectual</a></li>            
+            </ul>
+          </li>
+          <li><a href="/edition">Edição</a>
+          <li><a href="/contato">Contato</a></li>
+          
+        </ul>
+      </nav>
+      <section>
+        <app-contact-small></app-contact-small>
+      </section>    
+
+    </div>
+  </div>
